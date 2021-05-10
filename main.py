@@ -1,7 +1,7 @@
 from habr_parser import HabrParser
 
-KEYWORDS = ['дизайн', 'фото', 'web', 'python']
 SOURCE_URL = 'https://habr.com/ru/all/'
+KEYWORDS = ['дизайн', 'фото', 'web', 'python']
 
 
 if __name__ == "__main__":
