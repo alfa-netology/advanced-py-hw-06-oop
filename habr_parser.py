@@ -45,3 +45,4 @@ class HabrParser:
                 find_in_full_text += (f"<{date}> - <{title}> - <{link}> - найденые слова: {found_words}",)
 
         return find_in_preview, find_in_full_text
+
