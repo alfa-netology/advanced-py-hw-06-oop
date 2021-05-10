@@ -33,7 +33,7 @@ class HabrParser:
             date = self.__date_beautify(article.find('span', class_='post__time').text)
             link = article.find('a', class_='post__title_link').get('href')
             title = article.find('a', class_='post__title_link').text
-            preview = article.find('div', class_='post__text').text.strip()
+            preview = article.find('div', class_='post__text').text
             full_text = self.__get_article_full_text(link)
 
             if re.search(self.search_pattern, preview, flags=re.I):
@@ -45,4 +45,3 @@ class HabrParser:
                 find_in_full_text += (f"<{date}> - <{title}> - <{link}> - найденые слова: {found_words}",)
 
         return find_in_preview, find_in_full_text
-
