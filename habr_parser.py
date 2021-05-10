@@ -27,8 +27,7 @@ class HabrParser:
         return self.browser.get_current_page().find('div', id='post-content-body').text
 
     def find_articles_by_keywords(self):
-        find_in_preview = ()
-        find_in_full_text = ()
+        find_in_preview, find_in_full_text = (), ()
         for article in tqdm(self.articles, desc='collect data:'):
             date = self.__date_beautify(article.find('span', class_='post__time').text)
             link = article.find('a', class_='post__title_link').get('href')
