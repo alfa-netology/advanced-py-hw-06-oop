@@ -14,8 +14,7 @@ class HabrParser:
 
     def __get_articles(self):
         self.browser.open(self.url)
-        page = self.browser.get_current_page()
-        return page.find_all('article', class_='post_preview')
+        return self.browser.get_current_page().find_all('article', class_='post_preview')
 
     @staticmethod
     def __date_beautify(date):
