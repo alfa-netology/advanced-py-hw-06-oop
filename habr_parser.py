@@ -37,7 +37,7 @@ class HabrParser:
             full_text = self.__get_article_full_text(link)
 
             if re.search(self.search_pattern, preview, flags=re.I):
-                found_words = re.findall(self.search_pattern, full_text, flags=re.I)
+                found_words = re.findall(self.search_pattern, preview, flags=re.I)
                 find_in_preview += (f"<{date}> - <{title}> - <{link}> - найденые слова: {found_words}",)
 
             if re.search(self.search_pattern, full_text, flags=re.I):
