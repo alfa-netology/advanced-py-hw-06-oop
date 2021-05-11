@@ -24,7 +24,8 @@ class HabrParser:
 
     def __get_article_full_text(self, link):
         self.browser.open(link)
-        return self.browser.get_current_page().find('div', id='post-content-body').text
+        article_text = self.browser.get_current_page().find('div', class_='post__body')
+        return article_text.text if article_text else ''
 
     def find_articles_by_keywords(self):
         find_in_preview, find_in_full_text = (), ()
